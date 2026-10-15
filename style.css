@@ -5,13 +5,17 @@
 }
 
 @media (max-width: 769px) and (max-width: 1024px) {
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr)
+
+};
 
     main {
         width: 95%;
     }
 
     .dashboard {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .actions {

@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeVault</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>CodeVault</h1>
+        <p>Your code. Your Library</p>
+
+        <button id="themeBtn">🌙 Dark Mode</button>
+
+        <!-- Logout button appears after login -->
+        <button id="logoutBtn" style="display: none;">
+            Logout
+        </button>
+    </header>
+
+    <!-- Authentication section -->
+    <section id="authSection" class="code-form">
+
+        <!-- Login form -->
+        <div id="loginPanel">
+            <h2>Welcome Back!</h2>
+            <p>Login to access your code library.</p>
+
+            <form id="loginForm">
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Email address"
+                    autocomplete="email"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit" id="loginBtn">
+                    Login
+                </button>
+            </form>
+
+            <p>
+                Don't have an account?
+                <button type="button" id="showSignupBtn">
+                    Create Account
+                </button>
+            </p>
+        </div>
+
+        <!-- Create account form -->
+        <div id="signupPanel" style="display: none;">
+            <h2>Create Your Account</h2>
+            <p>Start building your personal code library.</p>
+
+            <form id="signupForm">
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Email address"
+                    autocomplete="email"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create password (minimum 8 characters)"
+                    autocomplete="new-password"
+                    minlength="8"
+                    required
+                >
+
+                <button type="submit" id="signupBtn">
+                    Create Account
+                </button>
+            </form>
+
+            <p>
+                Already have an account?
+                <button type="button" id="showLoginBtn">
+                    Login
+                </button>
+            </p>
+        </div>
+
+        <!-- Authentication messages -->
+        <p id="authMessage" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- Main application: shown after authentication -->
+    <main id="appContent" style="display: none;">
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            <div class="card">
+                <h2>Total snippets</h2>
+                <p id="totalSnippets">0</p>
+            </div>
+
+            <div class="card">
+                <h2>JavaScript</h2>
+                <p id="jsCount">0</p>
+            </div>
+
+            <div class="card">
+                <h2>C language</h2>
+                <p id="cCount">0</p>
+            </div>
+
+            <div class="card">
+                <h2>Python</h2>
+                <p id="pythonCount">0</p>
+            </div>
+
+        </section>
+
+        <!-- Search, language filter and add button -->
+        <section class="actions">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search your code..."
+            >
+
+            <select id="languageFilter">
+                <option value="all">All Languages</option>
+                <option value="javascript">JavaScript</option>
+                <option value="c">C</option>
+                <option value="python">Python</option>
+            </select>
+
+            <button type="button" id="addCodeBtn">
+                + Add Code
+            </button>
+
+        </section>
+
+        <!-- Saved code cards -->
+        <section id="codeContainer">
+
+            <div class="emptyMessage">
+                <h2>No code snippets yet</h2>
+                <p>Start building your personal code library</p>
+            </div>
+
+        </section>
+
+        <!-- Add or edit code form -->
+        <section id="codeForm" class="code-form"
+                 style="display: none;">
+
+            <h2>Add New Code</h2>
+
+            <input
+                type="text"
+                id="codeTitle"
+                placeholder="Code title"
+                required
+            >
+
+            <select id="codeLanguage" required>
+                <option value="">Select Language</option>
+                <option value="javascript">JavaScript</option>
+                <option value="c">C</option>
+                <option value="python">Python</option>
+            </select>
+
+            <textarea
+                id="codeDescription"
+                placeholder="Short Description"
+            ></textarea>
+
+            <textarea
+                id="codeInput"
+                placeholder="Paste Your code here..."
+                required
+            ></textarea>
+
+            <div class="form-buttons">
+                <button type="button" id="saveCodeBtn">
+                    Save Code
+                </button>
+
+                <button type="button" id="cancelCodeBtn">
+                    Cancel
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Supabase library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Application JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

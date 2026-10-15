@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+
+    main {
+        width: 95%;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions input,
+    .actions select,
+    .actions button {
+        width: 100%;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .form-buttons button {
+        width: 100%;
+    }
+
+    .card-buttons {
+        flex-wrap: wrap;
+    }
+
+    .card-buttons button {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+}
+
+body {
+    font-family: arial, sans-serif;
+    background-color: #f5f1eb;
+    color: #333;
+}
+
+header {
+    padding: 30px;
+    text-align: center;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 80px;
+}
+
+header p {
+    margin-top: 80px;
+    color: #777;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+    align-items: center;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#addCodeBtn {
+    background-color: #333;
+    color: white;
+}
+
+.emptyMessage {
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.emptyMessage p {
+    margin-top: 10px;
+    color: #777;
+}
+
+.code-form {
+    display: none;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.code-form h2 {
+    margin-bottom: 20px;
+}
+
+.code-form input , .code-form select , .code-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-family: arial, sans-serif;
+}
+
+.code-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#saveCodeBtn {
+    background-color: #333333;
+    color: white;
+}
+
+#cancelCodeBtn {
+    background-color: #eeeeee;
+    color: #333333;
+}
+
+.card-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.editBtn {
+    background-color: #f5f1eb;
+    color: #333333;
+}
+
+.deleteBtn {
+    background-color: #eeeeee;
+    color: #333333;
+}
+
+.copyBtn {
+    background-color: #333333;
+    color:white;
+}
+
+.runBtn {
+    background-color: #333333;
+    color: white;
+}
+
+.outputBox {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f5f1eb;
+    border-radius: 8px;
+}
+
+.output {
+    margin-top: 10px;
+    white-space: pre-wrap;
+}
+
+body.dark-mode {
+    background-color: #222222;
+    color: #eeeeee;
+}
+
+body.dark-mode .card,
+body.dark-mode .card-form,
+body.dark-mode .code-card {
+    background-color: #333333;
+    color: #eeeeee;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: #444444;
+    color: #ffffff;
+    border-color: #666666;
+}
+
+body.dark-mode .code-card pre,
+body.dark-mode .outputBox{
+    background-color: #444444;
+}
+
+body.dark-mode .emptyMessage {
+    color: #eeeeee;
+}
+
+#themeBtn {
+    margin-top: 15px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.actions input,
+.actions select {
+    flex: 1;
+}
+
+.actions button {
+    white-space: nowrap;
+}
+
+.code-card {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.code-form {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.card {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}

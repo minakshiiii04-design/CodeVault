@@ -4,14 +4,14 @@
     box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) and (max-width: 1024px) {
 
     main {
         width: 95%;
     }
 
     .dashboard {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .actions {
